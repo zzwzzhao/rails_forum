@@ -1,4 +1,6 @@
 class ForumsController < ApplicationController
+  before_filter :find_forum, only: [:show, :edit, :update, :destroy]
+
   def index
     @forums = Forum.all
   end
@@ -19,15 +21,12 @@ class ForumsController < ApplicationController
   end
 
   def show
-    @forum = Forum.find(params[:id])
   end
 
   def edit
-    @forum = Forum.find(params[:id])
   end
 
   def update
-    @forum = Forum.find(params[:id])
     if @forum.update_attributes(params[:forum])
       flash[:notice] = "Forum has been updated."
       redirect_to @forum
@@ -38,9 +37,17 @@ class ForumsController < ApplicationController
   end
 
   def destroy
-    @forum = Forum.find(params[:id])
     @forum.destroy
     flash[:notice] = "Forum has been deleted."
     redirect_to forums_path
   end
+
+  private
+    def find_forum
+      @forum = Forum.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The forum you were looking" +
+        " for could not be found."
+      redirect_to forums_path
+    end
 end
