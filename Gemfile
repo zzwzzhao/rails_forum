@@ -1,11 +1,27 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+gem 'execjs'
+gem 'therubyracer'
+gem 'bootstrap-sass', '2.0.0'
+gem 'faker', '1.0.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'slim-rails'
+
+gem 'devise'
+gem 'cancan'
+
+gem 'paperclip'
+gem 'searcher'
+gem 'kaminari'
+gem 'delayed_job'
+gem 'delayed_job_active_record'
+
 
 
 # Gems used only for assets and not required
@@ -22,6 +38,31 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+end
+
+group :test, :development do
+  gem 'mysql2'
+  gem 'rspec', '2.8.0'
+  gem 'rspec-rails', '2.8.1'
+  gem 'annotate', '~> 2.4.1.beta'
+  gem 'gmail'
+end
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl'
+  gem 'email_spec'
+  gem 'launchy'
+end
+
+group :production do
+  gem 'mysql2'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
