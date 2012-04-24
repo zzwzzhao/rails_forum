@@ -21,4 +21,26 @@ class ForumsController < ApplicationController
   def show
     @forum = Forum.find(params[:id])
   end
+
+  def edit
+    @forum = Forum.find(params[:id])
+  end
+
+  def update
+    @forum = Forum.find(params[:id])
+    if @forum.update_attributes(params[:forum])
+      flash[:notice] = "Forum has been updated."
+      redirect_to @forum
+    else
+      flash[:notice] = "Forum has not been updated."
+      render action: "edit"
+    end
+  end
+
+  def destroy
+    @forum = Forum.find(params[:id])
+    @forum.destroy
+    flash[:notice] = "Forum has been deleted."
+    redirect_to forums_path
+  end
 end

@@ -1,2 +1,5 @@
 - title(@forum.name, "Forum")
 h2 = @forum.name
+= link_to "Edit Forum", edit_forum_path(@forum)
+= link_to "Delete Forum", @forum, method: :delete,
+  confirm: "Are you sure you want to delete this forum?"
