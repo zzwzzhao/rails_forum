@@ -9,3 +9,5 @@ Feature: Creating forums
     And I fill in "Name" with "main forum"
     And I press "Create Forum"
     Then I should see "Forum has been created."
+    And I should be on the forum page for "main forum"
+    And I should see "main forum - Forum - Dota_forum"

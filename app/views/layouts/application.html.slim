@@ -2,7 +2,11 @@ doctype 5
 html
   head
     meta charset="UTF-8"
-    title DotaForum
+    title
+      - if content_for?(:title)
+        = yield(:title)
+      - else
+        Dota_forum
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
