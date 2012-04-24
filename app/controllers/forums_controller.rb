@@ -9,9 +9,13 @@ class ForumsController < ApplicationController
 
   def create
     @forum = Forum.new(params[:forum])
-    @forum.save
-    flash[:notice] = "Forum has been created."
-    redirect_to @forum
+    if @forum.save
+      flash[:notice] = "Forum has been created."
+      redirect_to @forum
+    else
+      flash[:alert] = "Forum has not been created."
+      render action: "new"
+    end
   end
 
   def show

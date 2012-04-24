@@ -16,6 +16,7 @@ gem 'slim-rails'
 gem 'devise'
 gem 'cancan'
 
+gem 'dynamic_form'
 gem 'paperclip'
 gem 'searcher'
 gem 'kaminari'
