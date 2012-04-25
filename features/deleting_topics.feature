@@ -4,8 +4,12 @@ Feature: Deleting topics
   I want to press a button and make them disappear
 
   Background:
+    Given there are the following users:
+      | email                  | password |
+      | zhaoyun@163.com        | password |
+    And I am signed in as them
     Given there is a forum called "main forum"
-    And that forum has a topic:
+    And "zhaoyun@163.com" has created a topic for this forum:
       | title | body             |
       | Pis   | Perfect is shit! |
     Given I am on the homepage

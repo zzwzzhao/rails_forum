@@ -1,13 +1,14 @@
 class TopicsController < ApplicationController
   before_filter :find_forum
   before_filter :find_topic, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def new
     @topic = @forum.topics.build
   end
 
   def create
-    @topic = @forum.topics.build(params[:topic])
+    @topic = @forum.topics.build(params[:topic].merge!(user: current_user))
     if @topic.save
       flash[:notice] = "Topic has been created."
       redirect_to [@forum, @topic]

@@ -4,12 +4,15 @@ Feature: Viewing topics
   I want to see them on that forum's page
 
   Background:
+    Given there are the following users:
+      | email                  | password |
+      | zhaoyun@163.com        | password |
     Given there is a forum called "main forum"
-    And that forum has a topic:
+    And "zhaoyun@163.com" has created a topic for this forum:
       | title | body             |
       | Pis   | Perfect is shit! |
     And there is a forum called "dota beginner"
-    And that forum has a topic:
+    And "zhaoyun@163.com" has created a topic for this forum:
       | title      | body            |
       | Angel_lover| I go to home wc! |
     And I am on the homepage

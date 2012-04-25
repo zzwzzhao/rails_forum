@@ -1,7 +1,8 @@
 class Topic < ActiveRecord::Base
   belongs_to :forum
+  belongs_to :user
   has_many :posts, order: "created_at ASC"
-  attr_accessible :title, :body
+  attr_accessible :title, :body, :user
 
   validates :title, presence: true
   validates :body, presence: true, length: { minimum: 10 }
