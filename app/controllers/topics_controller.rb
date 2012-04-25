@@ -35,6 +35,12 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    @topic.destroy
+    flash[:notice] = "Topic has been deleted."
+    redirect_to @forum
+  end
+
   private
     def find_forum
       @forum = Forum.find(params[:forum_id])
