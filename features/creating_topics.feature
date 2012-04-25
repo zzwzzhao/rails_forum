@@ -19,12 +19,12 @@ Feature: Creating Topics
     When I press "Create Topic"
     Then I should see "Topic has not been created."
     And I should see "Title can't be blank"
-    And I should see "Posts body can't be blank"
+    And I should see "Body can't be blank"
 
   Scenario: Body must be longer than 10 characters
     When I fill in "Title" with "sf am spe"
     And I fill in "Body" with "just it"
     And I press "Create Topic"
     Then I should see "Topic has not been created."
-    And I should see "Posts body is too short"
+    And I should see "Body is too short"
 

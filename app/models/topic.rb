@@ -1,11 +1,10 @@
 class Topic < ActiveRecord::Base
   belongs_to :forum
   has_many :posts, order: "created_at ASC"
-  attr_accessible :title, :posts_attributes
-
-  accepts_nested_attributes_for :posts
+  attr_accessible :title, :body
 
   validates :title, presence: true
+  validates :body, presence: true, length: { minimum: 10 }
 end
 # == Schema Information
 #
@@ -16,5 +15,6 @@ end
 #  forum_id   :integer(4)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  body       :text
 #
 

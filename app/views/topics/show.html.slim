@@ -1,4 +1,4 @@
 #topic
   h2 = @topic.title
-  #posts
-    = render partial: "posts/post", collection: @topic.posts
+  = link_to "Edit Topic", [:edit, @forum, @topic]
+  = simple_format(@topic.body)

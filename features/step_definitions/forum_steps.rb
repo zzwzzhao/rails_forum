@@ -1,3 +1,3 @@
 Given /^there is a forum called "([^\"]*)"$/ do |name|
-  @forum = Factory(:forum, name: name)
+  @forum = FactoryGirl.create(:forum, name: name)
 end

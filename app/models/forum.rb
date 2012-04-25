@@ -1,7 +1,7 @@
 class Forum < ActiveRecord::Base
   attr_accessible :name
 
-  has_many :topics
+  has_many :topics, dependent: :destroy
 
   validates :name, presence: true
 

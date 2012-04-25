@@ -6,18 +6,12 @@ Feature: Viewing topics
   Background:
     Given there is a forum called "main forum"
     And that forum has a topic:
-      | title |
-      | Pis   |
-    And that topic has a post:
-      | body            |
-      | Perfect is shit!|
+      | title | body             |
+      | Pis   | Perfect is shit! |
     And there is a forum called "dota beginner"
     And that forum has a topic:
-      | title      |
-      | Angel_lover|
-    And that topic has a post:
-      | body             |
-      | I go to home wc! |
+      | title      | body            |
+      | Angel_lover| I go to home wc! |
     And I am on the homepage
 
   Scenario: Viewing topics for a given forum

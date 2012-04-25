@@ -4,7 +4,6 @@ class TopicsController < ApplicationController
 
   def new
     @topic = @forum.topics.build
-    @topic.posts.build
   end
 
   def create
@@ -20,6 +19,20 @@ class TopicsController < ApplicationController
 
   def show
 
+  end
+
+  def edit
+
+  end
+
+  def update
+    if @topic.update_attributes(params[:topic])
+      flash[:notice] = "Topic has been updated."
+      redirect_to [@forum, @topic]
+    else
+      flash[:alert] = "Topic has not been updated."
+      render action: "edit"
+    end
   end
 
   private

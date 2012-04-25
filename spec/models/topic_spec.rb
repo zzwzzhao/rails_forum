@@ -12,5 +12,6 @@ end
 #  forum_id   :integer(4)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  body       :text
 #
 
