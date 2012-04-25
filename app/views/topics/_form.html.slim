@@ -1,0 +1,9 @@
+= form_for [@forum, @topic] do |f|
+  = f.error_messages
+  p
+    = f.label :title
+    = f.text_field :title
+  p
+    = f.fields_for :posts do |post|
+      = render partial: "posts/form", locals: { post: post }
+  = f.submit

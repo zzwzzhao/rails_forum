@@ -1,0 +1,4 @@
+#topic
+  h2 = @topic.title
+  #posts
+    = render partial: "posts/post", collection: @topic.posts
