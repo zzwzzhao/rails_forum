@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :topic
-  attr_accessible :body
+  belongs_to :user
+  attr_accessible :body, :user
 
   validates :body, presence: true, length: { minimum: 10 }
 end

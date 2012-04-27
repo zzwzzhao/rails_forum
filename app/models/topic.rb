@@ -17,5 +17,6 @@ end
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #  body       :text
+#  user_id    :integer(4)
 #
 

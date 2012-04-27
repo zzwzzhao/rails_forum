@@ -1,18 +1,18 @@
 require 'spec_helper'
 
-describe Topic do
+describe Permission do
   pending "add some examples to (or delete) #{__FILE__}"
 end
 # == Schema Information
 #
-# Table name: topics
+# Table name: permissions
 #
 #  id         :integer(4)      not null, primary key
-#  title      :string(255)
-#  forum_id   :integer(4)
+#  user_id    :integer(4)
+#  thing_id   :integer(4)
+#  thing_type :string(255)
+#  action     :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
-#  body       :text
-#  user_id    :integer(4)
 #
 

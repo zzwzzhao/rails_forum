@@ -34,5 +34,6 @@ end
 #  confirmation_token     :string(255)
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
+#  admin                  :boolean(1)      default(FALSE)
 #
 

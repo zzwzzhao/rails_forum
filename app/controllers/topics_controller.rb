@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-
+    @post = @topic.posts.build
   end
 
   def edit

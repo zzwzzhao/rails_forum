@@ -6,3 +6,8 @@
   br
   small Created by #{@topic.user.email}
   = simple_format(@topic.body)
+  h3 Posts
+  #posts
+    - if @topic.posts.exists?
+      = render @topic.posts.select(&:persisted?)
+  = render "posts/form"

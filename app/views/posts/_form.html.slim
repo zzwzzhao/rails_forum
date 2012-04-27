@@ -1,4 +1,7 @@
-p
-  = post.label :body
-  br
-  = post.text_area :body
+strong New post
+= form_for [@topic, @post] do |f|
+  = f.error_messages
+  p
+    = f.label :body
+    = f.text_area :body
+  = f.submit
