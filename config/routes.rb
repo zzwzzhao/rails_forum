@@ -13,6 +13,7 @@ DotaForum::Application.routes.draw do
   end
 
   namespace :admin do
+    root to: "base#index"
     resources :users
   end
   # The priority is based upon order of creation:

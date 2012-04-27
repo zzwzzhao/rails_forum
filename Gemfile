@@ -19,7 +19,7 @@ gem 'cancan'
 gem 'dynamic_form'
 gem 'paperclip'
 gem 'searcher'
-gem 'kaminari'
+#gem 'kaminari'
 #gem 'delayed_job'
 #gem 'delayed_job_active_record'
 
