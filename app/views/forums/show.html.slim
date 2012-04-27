@@ -1,8 +1,9 @@
 - title(@forum.name, "Forum")
 h2 = @forum.name
-= link_to "Edit Forum", edit_forum_path(@forum)
-= link_to "Delete Forum", @forum, method: :delete,
-  confirm: "Are you sure you want to delete this forum?"
+= admins_only do
+  = link_to "Edit Forum", edit_forum_path(@forum)
+  = link_to "Delete Forum", @forum, method: :delete,
+    confirm: "Are you sure you want to delete this forum?"
 = link_to "New Topic", new_forum_topic_path(@forum)
 ul#topic
   - @forum.topics.each do |topic|
