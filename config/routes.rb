@@ -1,5 +1,6 @@
 DotaForum::Application.routes.draw do
 
+
   devise_for :users
 
   root to: "forums#index"
@@ -9,6 +10,10 @@ DotaForum::Application.routes.draw do
 
   resources :topics do
     resources :posts
+  end
+
+  namespace :admin do
+    resources :users
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

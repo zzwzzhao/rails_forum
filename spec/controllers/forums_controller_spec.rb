@@ -1,11 +1,7 @@
 require 'spec_helper'
 
 describe ForumsController do
-  let(:user) do
-    user = Factory(:user)
-    user.confirm!
-    user
-  end
+  let(:user) { create_user! }
   let(:forum) { Factory(:forum) }
 
   context "standard users" do
