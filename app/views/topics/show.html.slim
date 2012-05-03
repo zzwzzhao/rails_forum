@@ -7,7 +7,7 @@
   .topicUser
     = gravatar_for @topic.user
     br
-    small Created by #{@topic.user.name}
+    small #{@topic.user.name}
   .topicBody
     = simple_format(@topic.body)
 h3 Posts
