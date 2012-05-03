@@ -14,6 +14,7 @@ h3 Posts
 table#posts.table.table-striped
   - if @topic.posts.exists?
     = render @topic.posts.select(&:persisted?)
+= render "posts/form"
 //  #posts
 //    - if @topic.posts.exists?
 //      ul.unstyled.post_list
