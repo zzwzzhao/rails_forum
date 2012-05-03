@@ -4,12 +4,12 @@
   = link_to "Delete Topic", [@forum, @topic], method: :delete,
     confirm: "Are you sure you want to delete this topic?"
   br
-  .topic_user
+  .topicUser
     = gravatar_for @topic.user
     br
     small Created by #{@topic.user.name}
-
-  = simple_format(@topic.body)
+  .topicBody
+    = simple_format(@topic.body)
 h3 Posts
 table#posts.table.table-striped
   - if @topic.posts.exists?

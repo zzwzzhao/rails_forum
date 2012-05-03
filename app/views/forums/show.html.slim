@@ -16,7 +16,7 @@ table#topics.table.table-striped
     - @topics.each do |topic|
       tr
         td.topic_subject = link_to topic.title, [@forum,topic]
-        td.topic_user #{topic.user.name}
+        td.topic_user_name #{topic.user.name}
         td.posts_count #{topic.posts_count}
         - if topic.last_post
           td.last_post  #{time_ago_in_words(topic.last_post.created_at)}之前by #{topic.last_post.user.name}
