@@ -20,6 +20,7 @@ class TopicsController < ApplicationController
 
   def show
     @post = @topic.posts.build
+    @posts = @topic.posts
   end
 
   def edit

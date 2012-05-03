@@ -1,7 +1,8 @@
-strong New post
-= form_for [@topic, @post] do |f|
-  = f.error_messages
-  p
-    = f.label :body
-    = f.text_area :body
-  = f.submit
+.reply_post
+  strong New post
+  = form_for [@topic, @post] do |f|
+    = f.error_messages
+    p
+      = f.label :body
+      = f.text_area :body, size: "150x15"
+    = f.submit

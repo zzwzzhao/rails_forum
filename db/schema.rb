@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427162622) do
+ActiveRecord::Schema.define(:version => 20120502102717) do
 
   create_table "forums", :force => true do |t|
     t.string   "name"
@@ -42,10 +42,11 @@ ActiveRecord::Schema.define(:version => 20120427162622) do
   create_table "topics", :force => true do |t|
     t.string   "title"
     t.integer  "forum_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.text     "body"
     t.integer  "user_id"
+    t.integer  "posts_count", :default => 0
   end
 
   add_index "topics", ["forum_id"], :name => "index_topics_on_forum_id"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20120427162622) do
     t.datetime "confirmation_sent_at"
     t.boolean  "admin",                  :default => false
     t.integer  "user_id"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,0 +1,100 @@
+@import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+/* header */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $blue;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: $blue;
+    text-decoration: none;
+  }
+}
+
+/* main */
+#main {
+  box-shadow: 6px 6px 12px #000;
+}
+
+
+/* forum list */
+.forumList li {
+  font-size: 200%;
+  overflow: hidden;
+  padding: 10px 15px;
+  img {
+    float: left;
+  }
+  a {
+    display: block;
+    padding: 50px 0;
+    margin-left: 120px;
+  }
+}
+
+/* topic list */
+.topic_subject {
+  width: 500px;
+}
+
+/* post list */
+//.post .user {
+//  float: left;
+//  border: 1px solid $grayLight;
+//}
+//#posts ul {
+// list-style: none;
+// li {
+//   width: 940px;
+// }
+//}
+//.post {
+//  position: relative;
+//  clear: both;
+//}
+ .user {
+  width: 100px;
+}
+ .body {
+  position: relative;
+}
+ .body .edit {
+  position: absolute;
+  right:0;
+  bottom:0;
+}
+.reply_post textarea {
+  width: 500px;
+}
+
+.topic_user {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#topic {
+  position: relative;
+}
+
+
+
+
+
+/* footer */
+#footer {
+  padding-top: 20px;
+}

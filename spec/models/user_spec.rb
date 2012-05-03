@@ -24,5 +24,7 @@ end
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  admin                  :boolean(1)      default(FALSE)
+#  user_id                :integer(4)
+#  name                   :string(255)
 #
 

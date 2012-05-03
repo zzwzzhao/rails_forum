@@ -1,3 +1,22 @@
-.post
-  h4 post.user
-  = simple_format(post.body)
+tr
+  td.user
+    = gravatar_for post.user
+    h4 = post.user.name
+  td.body
+    = simple_format(post.body)
+    - if post.user == current_user || current_user.try(:admin?)
+      = link_to "Edit Post", [:edit, @topic, post], class: "edit"
+
+
+
+
+/li
+  .post
+    .user
+      = gravatar_for post.user
+      h4 = post.user.name
+    .body
+      = simple_format(post.body)
+      - if post.user == current_user || current_user.try(:admin?)
+        = link_to "Edit Post", [:edit, @topic, post], class:"edit"
+

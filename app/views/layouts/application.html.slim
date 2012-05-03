@@ -10,18 +10,16 @@ html
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
+    | <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
   body
-    - flash.each do |key, value|
-      .flash id=key
-        = value
-    h1 = link_to "Dota_forum", root_path
-    nav
-      = admins_only do
-        =link_to "Admin", admin_root_path
-      - if user_signed_in?
-        Signed in as #{current_user.email}
-      - else
-        = link_to "Sign up", new_user_registration_path
-        = link_to "Sign in", new_user_session_path
-    = yield
+    = render 'layouts/header'
+    #main.container
+      - flash.each do |key, value|
+        .flash id=key
+          = value
+
+      = yield
+
+    #footer.container
+      = render 'layouts/footer'

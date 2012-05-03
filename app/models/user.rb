@@ -6,8 +6,11 @@ class User < ActiveRecord::Base
          :confirmable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :confirmed_at
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :confirmed_at, :name
   has_many :topics
+  has_many :posts
+
+  validates :name, presence: true
 
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
@@ -35,5 +38,7 @@ end
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  admin                  :boolean(1)      default(FALSE)
+#  user_id                :integer(4)
+#  name                   :string(255)
 #
 

@@ -5,6 +5,21 @@ h2 = @forum.name
   = link_to "Delete Forum", @forum, method: :delete,
     confirm: "Are you sure you want to delete this forum?"
 = link_to "New Topic", new_forum_topic_path(@forum)
-ul#topic
-  - @forum.topics.each do |topic|
-    li = link_to topic.title, [@forum, topic]
+table#topics.table.table-striped
+  thead
+    tr
+      th 主题
+      th 发贴人
+      th 回帖数
+      th 最后回贴
+  tbody
+    - @topics.each do |topic|
+      tr
+        td.topic_subject = link_to topic.title, [@forum,topic]
+        td.topic_user #{topic.user.name}
+        td.posts_count #{topic.posts_count}
+        - if topic.last_post
+          td.last_post  #{time_ago_in_words(topic.last_post.created_at)}之前by #{topic.last_post.user.name}
+        - else
+          td.last_post  没有回复
+= will_paginate @topics

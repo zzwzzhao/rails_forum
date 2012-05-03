@@ -4,10 +4,18 @@
   = link_to "Delete Topic", [@forum, @topic], method: :delete,
     confirm: "Are you sure you want to delete this topic?"
   br
-  small Created by #{@topic.user.email}
+  .topic_user
+    = gravatar_for @topic.user
+    br
+    small Created by #{@topic.user.name}
+
   = simple_format(@topic.body)
-  h3 Posts
-  #posts
-    - if @topic.posts.exists?
-      = render @topic.posts.select(&:persisted?)
-  = render "posts/form"
+h3 Posts
+table#posts.table.table-striped
+  - if @topic.posts.exists?
+    = render @topic.posts.select(&:persisted?)
+//  #posts
+//    - if @topic.posts.exists?
+//      ul.unstyled.post_list
+//      = render @topic.posts.select(&:persisted?)
+//  = render "posts/form"

@@ -2,6 +2,7 @@ class Topic < ActiveRecord::Base
   belongs_to :forum
   belongs_to :user
   has_many :posts, order: "created_at ASC"
+  has_one :last_post, class_name: "Post", order: "created_at DESC"
   attr_accessible :title, :body, :user
 
   validates :title, presence: true
