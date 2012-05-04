@@ -2,10 +2,13 @@ tr
   td.user
     = gravatar_for post.user
     h4 = post.user.name
-  td.body
-    = simple_format(post.body)
-    - if post.user == current_user || current_user.try(:admin?)
-      = link_to "Edit Post", [:edit, @topic, post], class: "edit"
+  td
+    .body
+      = simple_format(post.body)
+      - if post.user == current_user || current_user.try(:admin?)
+        .edit_floor
+          = link_to "Edit Post", [:edit, @topic, post], class: "edit"
+          p #{@n=@n+1}楼
 
 
 

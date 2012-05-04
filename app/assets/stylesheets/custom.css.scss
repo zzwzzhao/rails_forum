@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+.clear:after {
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+}
+
+
 html {
   overflow-y: scroll;
 }
@@ -72,10 +81,9 @@ body {
  .body {
   position: relative;
 }
- .body .edit {
-  position: absolute;
-  right:0;
-  bottom:0;
+
+.edit_floor {
+  float: right;
 }
 .reply_post textarea {
   width: 500px;

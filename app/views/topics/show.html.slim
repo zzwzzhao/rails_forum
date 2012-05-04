@@ -13,6 +13,7 @@
 h3 Posts
 table#posts.table.table-striped
   - if @topic.posts.exists?
+    - @n=1
     = render @topic.posts.select(&:persisted?)
 = render "posts/form"
 //  #posts
